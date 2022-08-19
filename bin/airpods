@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FILE="$HOME/.cache/airpods-connected"
+MAC=41:42:D2:37:AF:3C
+NAME="AirPods"
+
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	bluetoothctl power on
+	bluetoothctl connect $MAC
+	notify-send "$NAME Connected"
+else
+	bluetoothctl disconnect $MAC
+	rm "$FILE"
+	notify-send "$NAME Disconnected"
+fi

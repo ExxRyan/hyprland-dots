@@ -1,0 +1,21 @@
+#!/bin/sh
+s=$(bluetoothctl devices Connected)
+symbol() {
+    if [ $(systemctl is-active bluetooth) = active]; then
+        echo 
+    elif [[ ! -z $s ]]; then
+        echo 
+    else
+        echo 
+    fi
+}
+
+name() {
+[[ -z $s ]] && echo "No Device connected" && exit
+device_name=$(bluetoothctl devices Connected | cut -d' ' -f 3-)
+device_mac=$(bluetoothctl devices Connected| cut -d' ' -f 2)
+echo "Connected to $device_name($device_mac)"
+}
+
+[ "$1" = "icon" ] && symbol && exit
+[ "$1" = "name" ] && name && exit

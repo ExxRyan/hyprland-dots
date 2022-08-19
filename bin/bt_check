@@ -1,0 +1,14 @@
+#!/bin/bash
+
+s=$(bluetoothctl devices Connected)
+
+if [[ ! -z $s ]]; then
+	echo "Some devices connected :)"
+	device_name=$( echo $s | cut -d' ' -f 3-)
+	device_mac=$(echo $s | cut -d' ' -f 2)
+	echo $device_name
+	echo $device_mac
+	echo "Connected to $device_name ($device_mac)"
+else
+	echo "No devices connected :("
+fi

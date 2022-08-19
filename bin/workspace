@@ -1,0 +1,4 @@
+#!/bin/bash
+
+clients=$(hyprctl -j clients | jq '. | length')
+echo $clients

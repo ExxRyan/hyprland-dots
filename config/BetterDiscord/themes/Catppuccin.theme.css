@@ -1,0 +1,33 @@
+/**
+ * @name Catppuccin
+ * @author Catppuccin
+ * @version 0.0.8
+ * @description 🎮 Soothing pastel theme for Discord
+ * @website https://github.com/catppuccin
+ * @source https://github.com/catppuccin/discord
+ **/
+
+@import url(https://catppuccin.github.io/discord/main.css);
+@import url(https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css);
+
+:root {
+	--accent-hue: 224;
+	--accent-saturation: 71%;
+	--accent-lightness: 61%;
+	--accent-text-color: #fff;
+	--accent-button-action: #fff; /*	-	*/
+	
+	--avatar-radius: 50%; /*	-	*/
+
+	--message-radius: 19px;
+	--message-padding: 8px 12px;
+	--message-padding-alt: 4px 12px 8px 12px; /*	-	*/
+
+	--media-radius: 19px; /*	-	*/
+
+	--card-radius: 5px;
+	--card-radius-big: 10px; /*	-	*/
+
+	--popout-radius: 5px;
+	--popout-radius-big: 10px;
+}

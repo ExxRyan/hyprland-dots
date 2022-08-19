@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+IMG_PATH=/home/ryan/Pictures/Screenshots/ # Path where to save screenshots.
+
+prog="1.Quick_select
+2.Quick_fullscreen
+3.Section
+4.Focused
+5.Fullscreen
+6.Fullscreen_edit"
+
+cmd=$(rofi -dmenu -p <<< "$prog")
+
+cd $IMG_PATH
+case ${cmd%% *} in
+# Uncomment commented lines to receive notofications.
+    1.Quick_select)    grim -g "$(slurp)" - | wl-copy;;
+    2.Quick_fullscreen)    sleep 1;grim -o $(hyprctl -j monitors | jq -r '.[] | select(.active == true) | .name') - | wl-copy;;
+    3.Section)    grim -g "$(slurp)" $IMG_PATH/$(date +'%s_grim.png');;
+    4.Focused)    grim -g "$(hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" $IMG_PATH/$(date +'%s_grim.png');;
+    5.Fullscreen)    sleep 1;grim -o $(hyprctl -j monitors | jq -r '.[] | select(.active == true) | .name') $IMG_PATH/$(date +'%s_grim.png');;
+    6.Fullscreen_edit)    sleep 1;grim -o $(hyprctl -j monitors | jq -r '.[] | select(.active == true) | .name') - | swappy -f -;;
+      *)        echo "NOPE"  ;;
+esac

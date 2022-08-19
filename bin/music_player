@@ -1,0 +1,4 @@
+
+
+artists=$(playerctl metadata | grep artist | sed 's/.*artist //' | xargs)
+echo $artists
