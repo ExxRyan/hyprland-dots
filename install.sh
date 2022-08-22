@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-install_aur_package() {
-    git clone https://aur.archlinux.org/$1.git
-    cd $1
+install_yay() {
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
     makepkg -si
     cd ..
-    rm -rf $1
+    rm -rf yay
 }
 
 satisfy_requirements() {
@@ -30,6 +30,25 @@ logo () {
     figlet -ctf term "Telegram: https://t.me/ryans_lounge"
 }
 
+hardware_install () {
+    # Adding directories
+    mkdir -p "$HOME/.config"
+    mkdir -p "$HOME/.bin"
+    mkdir -p "$HOME/.fonts"
+    mkdir -p "$HOME/Pictures/Screenshots"        
+    mkdir -p "$HOME/Dowloads"
+    mkdir -p "$HOME/Projects/from_source"
+    install_yay
+    yay -S -< pkgs.lst
+    ln -sfr config/* $HOME/.config
+    ln -sfr bin/* $HOME/.bin
+    ln -sfr fonts/* $HOME/.fonts
+    fc-cache
+    echo "Finished :)"
+}
+
+
 
 satisfy_requirements
 logo
+hardware_install
