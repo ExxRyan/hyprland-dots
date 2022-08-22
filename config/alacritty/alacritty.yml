@@ -1,5 +1,3 @@
-# config by Evan Koehler
-
 window:
   # adds padding to the terminal (looks great with rounded corners)
   padding:

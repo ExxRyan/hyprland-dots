@@ -9,4 +9,6 @@ export WLR_NO_HARDWARE_CURSORS=1
 export WLR_BACKEND=vulkan
 export QT_QPA_PLATFORM=wayland
 export GDK_BACKEND=wayland
+export GTK_THEME=Catppuccin-purple
+export QT_QPA_PLATFORMTHEME=qt5ct
 Hyprland

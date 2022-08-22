@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-IMG_PATH=/home/ryan/Pictures/Screenshots/ # Path where to save screenshots.
+IMG_PATH=/home/$USER/Pictures/Screenshots/ # Path where to save screenshots.
 
 prog="1.Quick_select
 2.Quick_fullscreen

@@ -3,7 +3,7 @@
 function handle {
   if [[ ${1:0:12} == "monitoradded" ]]; then
     echo "Spawning eww..."
-    sleep 2;eww -c ~/.config/eww/bar close bar2;eww -c ~/.config/eww/bar open bar2
+    sleep 2;eww -c $HOME/.config/eww/bar close bar2;eww -c $HOME/.config/eww/bar open bar2
     echo "Eww should be spawned :)"
   fi
 }

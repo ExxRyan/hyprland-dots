@@ -167,7 +167,7 @@
 
 	(button		:class "button-lock" 				
 				:tooltip "Lock Screen"	 
-				:onclick "swaylock -c ~/.config/swaylock/config -i ~/Pictures/cat_stark2_wallpaper.png &"	"")))
+				:onclick "swaylock -c $HOME/.config/swaylock/config -i ~/Pictures/cat_stark2_wallpaper.png &"	"")))
 
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
