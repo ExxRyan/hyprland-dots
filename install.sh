@@ -68,6 +68,8 @@ hardware_install () {
     ln -sfr config/* $HOME/.config
     ln -sfr bin/* $HOME/.bin
     ln -sfr fonts/* $HOME/.fonts
+    ln -sf misc/.zshrc $HOME/.zshrc
+    chsh -s $(which zsh)
     install_hyprland
     install_eww
     install_large_packages
