@@ -70,11 +70,11 @@ hardware_install () {
     ln -sfr fonts/* $HOME/.fonts
     ln -sf $(pwd)/misc/.zshrc $HOME/.zshrc
     chsh -s /bin/zsh
-    exec /bin/zsh
     install_hyprland
     install_eww
     install_large_packages
     echo "Finished :)"
+    exec /bin/zsh
 }
 
 
