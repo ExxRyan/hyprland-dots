@@ -1,5 +1,5 @@
 #/usr/bin/env bash
-cd $HOME/Projects/building_from_source/Hyprland
+cd $HOME/Projects/from_source/Hyprland
 git pull && sudo make clear && sudo make install
 cd $HOME
 hyprland

@@ -31,7 +31,6 @@ gzip
 intel-ucode
 jq
 lxappearance
-nerd-fonts-complete
 net-tools
 networkmanager-openvpn
 nmap
@@ -45,8 +44,6 @@ obs-studio
 openssh
 openssl
 openvpn
-paper-icon-theme
-papirus-icon-theme-git
 pavucontrol
 pipewire
 pipewire-alsa
@@ -90,7 +87,6 @@ wayland
 wev
 wl-clipboard
 wl-color-picker
-xdg-desktop-portal
 xdg-desktop-portal-wlr-hyprland-git
 xdg-utils
 xdotool

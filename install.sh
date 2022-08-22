@@ -30,6 +30,31 @@ logo () {
     figlet -ctf term "Telegram: https://t.me/ryans_lounge"
 }
 
+install_hyprland () {
+    yay -S gdb ninja gcc cmake libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite xorg-xinput libxrender pixman wayland-protocols cairo pango seatd meson
+    cd $HOME/Projects/from_source
+    git clone --recursive https://github.com/hyprwm/Hyprland
+    cd Hyprland
+    sudo make install
+    cd $HOME
+}
+install_eww () {
+    cd $HOME/Projects/from_source
+    git clone https://github.com/elkowar/eww
+    cd eww
+    yay -S cargo
+    cargo build --release --no-default-features --features=wayland
+    chmod +x target/release/eww
+    cp target/release/eww $HOME/.bin/eww
+}
+
+install_large_packages () {
+    yay -S nerd-fonts-complete
+    sleep 1
+    yay -S paper-icon-theme
+}
+
+
 hardware_install () {
     # Adding directories
     mkdir -p "$HOME/.config"
@@ -39,11 +64,13 @@ hardware_install () {
     mkdir -p "$HOME/Dowloads"
     mkdir -p "$HOME/Projects/from_source"
     install_yay
-    yay -S -< pkgs.lst
+    yay -Syyuu -< pkgs.lst
     ln -sfr config/* $HOME/.config
     ln -sfr bin/* $HOME/.bin
     ln -sfr fonts/* $HOME/.fonts
-    fc-cache
+    install_hyprland
+    install_eww
+    install_large_packages
     echo "Finished :)"
 }
 
