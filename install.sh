@@ -69,8 +69,8 @@ hardware_install () {
     ln -sfr bin/* $HOME/.bin
     ln -sfr fonts/* $HOME/.fonts
     ln -sf $(pwd)/misc/.zshrc $HOME/.zshrc
-    chsh -s $(which zsh)
-    exec $(which zsh)
+    chsh -s /bin/zsh
+    exec /bin/zsh
     install_hyprland
     install_eww
     install_large_packages
