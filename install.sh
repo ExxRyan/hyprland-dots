@@ -46,6 +46,7 @@ install_eww () {
     cargo build --release --no-default-features --features=wayland
     chmod +x target/release/eww
     cp target/release/eww $HOME/.bin/eww
+    cd $HOME
 }
 
 install_large_packages () {
