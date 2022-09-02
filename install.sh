@@ -66,9 +66,9 @@ hardware_install () {
     mkdir -p "$HOME/Projects/from_source"
     install_yay
     yay -Syyuu -< pkgs.lst
-    ln -sfr config/* $HOME/.config
-    ln -sfr bin/* $HOME/.bin
-    ln -sfr fonts/* $HOME/.fonts
+    ln -sfr $(pwd)/config/* $HOME/.config
+    ln -sfr $(pwd)/bin/* $HOME/.bin
+    ln -sfr $(pwd)/fonts/* $HOME/.fonts
     ln -sf $(pwd)/misc/.zshrc $HOME/.zshrc
     chsh -s /bin/zsh
     install_hyprland
