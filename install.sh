@@ -64,9 +64,9 @@ menu () {
     PATCH_VM="Add environment variable for alacritty (For VM)"
     ACTIONS=$(gum choose --selected.foreground=77 --cursor.foreground=77 --cursor-prefix "[ ] " --selected-prefix "[✓] " --no-limit "$DEFAULT_INSTALL" "$PATCH_PC" "$PATCH_VM")
     echo $ACTIONS
-    grep -q "$DEFAULT_INSTALL"<<< "$ACTIONS" && gum style --bold --foreground=76 "Running default installation" -- sleep 1;install
-    grep -q "$PATCH_PC" <<< "$ACTIONS" && gum style --bold --foreground=76 "Patching bar" -- sleep 1;
-    grep -q "$PATCH_VM" <<< "$ACTIONS" && gum style --bold --foreground=76 "Patching alacritty config" -- sleep 5;
+    grep -q "$DEFAULT_INSTALL"<<< "$ACTIONS" && gum style --bold --foreground=76 "Running default installation" && sleep 1 && install
+    grep -q "$PATCH_PC" <<< "$ACTIONS" && gum style --bold --foreground=76 "Patching bar" && sleep 1 
+    grep -q "$PATCH_VM" <<< "$ACTIONS" && gum style --bold --foreground=76 "Patching alacritty config" && sleep 2
 }
 
 
@@ -89,7 +89,6 @@ install () {
     install_eww
     install_large_packages
     echo "Finished :)"
-    exec /bin/zsh
 }
 
 
